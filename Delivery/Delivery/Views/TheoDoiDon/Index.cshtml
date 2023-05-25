@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Delivery.Models.DonHang_TimKiemTheoTenNG_Result>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" style="background-color: #F2F2F2; padding: 50px;">
+
+    <div class="d-flex justify-content-between mb-3">
+        <h3 class="fw-bold">Danh sách đơn hàng</h3>
+        <form class="d-flex" role="search">
+            <input name="searchString" class="form-control me-2" type="text" placeholder="Tìm kiếm tên người gửi" aria-label="Search">
+            <button class="btn btn-success" type="submit">Tìm kiếm</button>
+        </form>
+    </div>
+    <div class="form-horizontal" style="background-color: white; padding: 30px; border-radius: 1rem">
+        <div class="">
+            <table class="table table-hover">
+                <tr>
+                    <th>
+                        @Html.DisplayName("Mã đơn hàng")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Người gửi")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Địa chỉ người gửi")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Địa chỉ người nhận")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Người nhận")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Trạng thái")
+                    </th>
+                    <th class="text-center">
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <p>@Html.DisplayFor(model => item.MaDonHang)</p>
+                        </td>
+                        <td>
+                            <p>@Html.DisplayFor(model => item.NguoiGui)</p>
+                        </td>
+                        <td>
+                            <p>@Html.DisplayFor(model => item.Tu)</p>
+                        </td>
+                        <td>
+                            <p>@Html.DisplayFor(model => item.DiaChiNguoiNhan)/@Html.DisplayFor(model => item.DiaChiPhuong)/@Html.DisplayFor(model => item.DiaChiQuan)/@Html.DisplayFor(model => item.DiaChiThanhPho)</p>
+                        </td>
+                        <td>
+                            <p>@Html.DisplayFor(model => item.NguoiNhan)</p>
+                        </td>
+                        <td>
+                            @{
+                                int trangThai = Convert.ToInt32(Html.DisplayFor(model => item.TrangThai).ToString());
+                                switch (trangThai)
+                                {
+                                    case 1:
+                                        // code block
+                                        <p>Chờ xử lý</p>
+                                        break;
+                                    case 2:
+                                        // code block
+                                        <p>Đã nhận</p>
+                                        break;
+                                    case 3:
+                                        // code block
+                                        <p>Đã phân phối</p>
+                                        break;
+                                    case 4:
+                                        // code block
+                                        <p>Shipper đã nhận đơn</p>
+                                        break;
+                                    case 5:
+                                        // code block
+                                        <p>Đã lấy hàng</p>
+                                        break;
+                                    case 6:
+                                        // code block
+                                        <p>Đang giao hàng</p>
+                                        break;
+                                    case 7:
+                                        // code block
+                                        <p>Đã giao</p>
+                                        break;
+                                    default:
+                                        // code block
+                                        <p>Không tồn tại</p>
+                                        break;
+                                }
+                            }
+                        </td>
+                        <td class="text-center">
+                            @Html.ActionLink("Xem chi tiết", "Details", new { id = @item.MaDonHang }, new { @class = "btn btn-outline-success mx-2" })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

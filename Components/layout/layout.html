@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="reset.css">
+    <title>UI</title>
+</head>
+
+<body>
+<!--#region Vùng không sửa code -->
+    <header>
+        <!-- Cái này là thanh điều hướng trên cùng -->
+        <div class="wrap-navbar">
+            <nav class="navigation-bar">
+                <div class="space"></div>
+                <div class="nav-content d-flex align-items-center"></div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main d-flex">
+        <div class="wrap-sidebar">
+            <div class="sidebar shadow-lg d-flex flex-column">
+                <div class="logo">
+                    <img src="./logo.png" alt="" srcset="">
+                    <div class="logo-name">
+                        <div class="ghk2p"><p>ghk2p</p></div>
+                        <div class="delivery"><p> delivery</p></div>
+                    </div>
+                    
+
+                </div>
+                <div class="main-menu holder">
+                    <div class="main-menu-holder">
+
+                        <div class="minimize-button" id="minimize-button">
+                            <i class='mini-icon bx bx-chevron-left'></i>
+                        </div>
+                    </div>
+                </div>
+                <ul class="main-menu">
+                    <li class="main-menu-item-wrap active">
+                        <a class="main-menu-item" href="#">
+                            <svg width="22" height="22" viewBox="0 0 33 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.32141 12.347V28.6773C4.32141 28.971 4.43806 29.2526 4.64569 29.4602C4.85332 29.6678 5.13492 29.7845 5.42855 29.7845H12.0714V20.3738C12.0714 19.9333 12.2464 19.5109 12.5578 19.1995C12.8693 18.888 13.2917 18.7131 13.7321 18.7131H19.2678C19.7083 18.7131 20.1307 18.888 20.4421 19.1995C20.7536 19.5109 20.9286 19.9333 20.9286 20.3738V29.7845H27.5714C27.865 29.7845 28.1467 29.6678 28.3543 29.4602C28.5619 29.2526 28.6786 28.971 28.6786 28.6773V12.347"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M32 15.3916L17.2535 1.27558C16.9076 0.91022 16.0987 0.906068 15.7465 1.27558L1 15.3916"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M26.4643 10.0635V2.1059H23.1429V6.88045" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="main-menu-item-wrap">
+                        <a class="main-menu-item" href="#">
+                            <svg width="22" height="22" viewBox="0 0 29 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.3713 7.64154C20.1001 11.2992 17.3273 14.2831 14.2832 14.2831C11.2392 14.2831 8.46153 11.2999 8.19517 7.64154C7.91844 3.83649 10.6166 1 14.2832 1C17.9499 1 20.6481 3.90567 20.3713 7.64154Z"
+                                    stroke="#228542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M14.2832 18.7108C8.26435 18.7108 2.15552 22.0316 1.02507 28.2995C0.888784 29.055 1.31633 29.78 2.10709 29.78H26.4594C27.2509 29.78 27.6784 29.055 27.5421 28.2995C26.411 22.0316 20.3021 18.7108 14.2832 18.7108Z"
+                                    stroke="#228542" stroke-width="2" stroke-miterlimit="10" />
+                            </svg>
+                            <span>Quản lí tài khoản</span>
+                        </a>
+                    </li>
+                    <li class="main-menu-item-wrap">
+                        <a class="main-menu-item" href="#">
+                            <svg width="22" height="22" viewBox="0 0 43 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M34.2777 7.4755C34.0142 11.1333 31.3008 13.951 28.3419 13.951C25.3829 13.951 22.665 11.1342 22.406 7.4755C22.1362 3.67024 24.7776 1 28.3419 1C31.9061 1 34.5475 3.7395 34.2777 7.4755Z"
+                                    stroke="#228542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M28.3419 19.707C22.4807 19.707 16.8443 22.6182 15.4323 28.2879C15.2452 29.038 15.7156 29.78 16.4863 29.78H40.1983C40.9691 29.78 41.4368 29.038 41.2524 28.2879C39.8404 22.5274 34.204 19.707 28.3419 19.707Z"
+                                    stroke="#228542" stroke-width="2" stroke-miterlimit="10" />
+                                <path
+                                    d="M16.1104 9.08897C15.9 12.0101 13.7073 14.3107 11.3437 14.3107C8.98018 14.3107 6.7839 12.011 6.57705 9.08897C6.36209 6.04998 8.49631 3.87799 11.3437 3.87799C14.1912 3.87799 16.3254 6.10574 16.1104 9.08897Z"
+                                    stroke="#228542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M16.65 19.8869C15.0266 19.1431 13.2387 18.8571 11.3437 18.8571C6.66694 18.8571 2.16107 21.182 1.03236 25.7104C0.883961 26.3093 1.2599 26.902 1.87507 26.902H11.9733"
+                                    stroke="#228542" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                            </svg>
+
+                            <span>Quản lí nhân viên</span>
+                        </a>
+                    </li>
+                    <li class="main-menu-item-wrap">
+                        <a class="main-menu-item" href="#">
+                            <svg width="22" height="22" viewBox="0 0 34 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.39838 7.5954V26.7821C3.40075 27.5764 3.71736 28.3376 4.27907 28.8993C4.84077 29.461 5.60193 29.7776 6.39629 29.78H26.7821C27.5765 29.7776 28.3376 29.461 28.8994 28.8993C29.4611 28.3376 29.7777 27.5764 29.78 26.7821V7.5954"
+                                    stroke="#228542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M30.0798 1H3.09854C1.93955 1 1 1.93955 1 3.09854V4.89729C1 6.05628 1.93955 6.99583 3.09854 6.99583H30.0798C31.2388 6.99583 32.1783 6.05628 32.1783 4.89729V3.09854C32.1783 1.93955 31.2388 1 30.0798 1Z"
+                                    stroke="#228542" stroke-width="2" stroke-linejoin="round" />
+                                <path d="M21.3858 18.9875L16.5891 23.7841L11.7925 18.9875" stroke="#228542"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M16.5891 22.127V12.9916" stroke="#228542" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Quản lí tiếp nhận</span>
+                        </a>
+                    </li>
+                    <li class="main-menu-item-wrap">
+                        <a class="main-menu-item" href="#">
+                            <i class='bx bx-user'></i>
+                            <span>Đơn hàng chưa nhận</span>
+                        </a>
+                    </li>
+                    <li class="main-menu-item-wrap">
+                        <a class="main-menu-item" href="#">
+                            <i class='bx bx-user'></i>
+                            <span>Đơn hàng đã nhận</span>
+                        </a>
+                    </li>
+                    <li class="main-menu-item-wrap">
+                        <a class="main-menu-item" href="#">
+                            <svg width="22" height="22" viewBox="0 0 31 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M23.1385 26.4495V2.66038C23.1372 2.22042 22.9618 1.79883 22.6507 1.48773C22.3396 1.17662 21.918 1.00128 21.4781 1H2.66038C2.22042 1.00128 1.79883 1.17662 1.48773 1.48773C1.17662 1.79883 1.00128 2.22042 1 2.66038V27.0127C1.00219 27.746 1.29445 28.4486 1.81294 28.9671C2.33144 29.4856 3.03405 29.7778 3.76731 29.78H26.4592"
+                                    stroke="#228542" stroke-width="2" stroke-linejoin="round" />
+                                <path
+                                    d="M26.4593 29.78C25.5785 29.78 24.7339 29.4301 24.1111 28.8074C23.4884 28.1846 23.1385 27.3399 23.1385 26.4592V6.53461H28.1196C28.56 6.53461 28.9823 6.70954 29.2937 7.02092C29.6051 7.3323 29.78 7.75463 29.78 8.19499V26.4592C29.78 27.3399 29.4302 28.1846 28.8074 28.8074C28.1846 29.4301 27.34 29.78 26.4593 29.78Z"
+                                    stroke="#228542" stroke-width="2" stroke-linejoin="round" />
+                                <path d="M14.2831 6.53461H18.7108" stroke="#228542" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14.2831 10.9623H18.7108" stroke="#228542" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M5.42767 15.39H18.7108" stroke="#228542" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M5.42767 19.8177H18.7108" stroke="#228542" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M5.42767 24.2454H18.7108" stroke="#228542" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Quản lí đơn hàng</span>
+                        </a>
+                    </li>
+                    <li class="main-menu-item-wrap">
+                        <a class="main-menu-item" href="#">
+                            <svg width="22" height="22" viewBox="0 0 29 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="path-1-inside-1_54_835" fill="white">
+                                    <path
+                                        d="M27.8207 28.78H1.91867C1.4098 28.78 0.921784 28.5779 0.561965 28.218C0.202145 27.8582 0 27.3702 0 26.8613V0.959333C0 0.704902 0.101072 0.460892 0.280982 0.280982C0.460892 0.101072 0.704902 0 0.959333 0C1.21376 0 1.45777 0.101072 1.63768 0.280982C1.81759 0.460892 1.91867 0.704902 1.91867 0.959333V26.8613H27.8207C28.0751 26.8613 28.3191 26.9624 28.499 27.1423C28.6789 27.3222 28.78 27.5662 28.78 27.8207C28.78 28.0751 28.6789 28.3191 28.499 28.499C28.3191 28.6789 28.0751 28.78 27.8207 28.78Z" />
+                                </mask>
+                                <path
+                                    d="M0 26.8613H-2H0ZM0.959333 0V-2V0ZM1.91867 0.959333H3.91867H1.91867ZM1.91867 26.8613H-0.0813333V28.8613H1.91867V26.8613ZM27.8207 26.78H1.91867V30.78H27.8207V26.78ZM1.91867 26.78C1.94024 26.78 1.96093 26.7886 1.97618 26.8038L-0.852249 29.6322C-0.117357 30.3671 0.879371 30.78 1.91867 30.78V26.78ZM1.97618 26.8038C1.99143 26.8191 2 26.8398 2 26.8613H-2C-2 27.9006 -1.58714 28.8974 -0.852249 29.6322L1.97618 26.8038ZM2 26.8613V0.959333H-2V26.8613H2ZM2 0.959333C2 1.23533 1.89036 1.50003 1.6952 1.6952L-1.13323 -1.13323C-1.68821 -0.578249 -2 0.17447 -2 0.959333H2ZM1.6952 1.6952C1.50003 1.89036 1.23533 2 0.959333 2V-2C0.17447 -2 -0.578249 -1.68821 -1.13323 -1.13323L1.6952 1.6952ZM0.959333 2C0.683332 2 0.418634 1.89036 0.223471 1.6952L3.0519 -1.13323C2.49692 -1.68821 1.7442 -2 0.959333 -2V2ZM0.223471 1.6952C0.0283079 1.50003 -0.0813333 1.23533 -0.0813333 0.959333H3.91867C3.91867 0.17447 3.60688 -0.578249 3.0519 -1.13323L0.223471 1.6952ZM-0.0813333 0.959333V26.8613H3.91867V0.959333H-0.0813333ZM1.91867 28.8613H27.8207V24.8613H1.91867V28.8613ZM27.8207 28.8613C27.5447 28.8613 27.28 28.7517 27.0848 28.5565L29.9132 25.7281C29.3582 25.1731 28.6055 24.8613 27.8207 24.8613V28.8613ZM27.0848 28.5565C26.8896 28.3614 26.78 28.0967 26.78 27.8207H30.78C30.78 27.0358 30.4682 26.2831 29.9132 25.7281L27.0848 28.5565ZM26.78 27.8207C26.78 27.5447 26.8896 27.28 27.0848 27.0848L29.9132 29.9132C30.4682 29.3582 30.78 28.6055 30.78 27.8207H26.78ZM27.0848 27.0848C27.28 26.8896 27.5447 26.78 27.8207 26.78V30.78C28.6055 30.78 29.3582 30.4682 29.9132 29.9132L27.0848 27.0848Z"
+                                    fill="#228542" mask="url(#path-1-inside-1_54_835)" />
+                                <path
+                                    d="M8.39417 23.9427H5.99584C5.68859 23.9427 5.39392 23.8206 5.17666 23.6033C4.9594 23.3861 4.83734 23.0914 4.83734 22.7842V13.6705C4.83734 13.3632 4.9594 13.0686 5.17666 12.8513C5.39392 12.634 5.68859 12.512 5.99584 12.512H8.39417C8.70143 12.512 8.9961 12.634 9.21336 12.8513L9.92046 12.1442L9.21336 12.8513C9.43062 13.0686 9.55267 13.3632 9.55267 13.6705V22.7842C9.55267 23.0914 9.43062 23.3861 9.21336 23.6033C8.9961 23.8206 8.70143 23.9427 8.39417 23.9427Z"
+                                    stroke="#228542" stroke-width="2" />
+                                <path
+                                    d="M17.0281 23.9427H14.6298C14.3226 23.9427 14.0279 23.8206 13.8106 23.6034L13.1035 24.3105L13.8106 23.6034C13.5934 23.3861 13.4713 23.0914 13.4713 22.7842V10.7925C13.4713 10.4852 13.5934 10.1906 13.8106 9.97332C14.0279 9.75606 14.3226 9.634 14.6298 9.634H17.0281C17.3354 9.634 17.6301 9.75606 17.8473 9.97332L18.5544 9.26621L17.8473 9.97332C18.0646 10.1906 18.1866 10.4852 18.1866 10.7925V22.7842C18.1866 23.0914 18.0646 23.3861 17.8473 23.6034C17.6301 23.8206 17.3354 23.9427 17.0281 23.9427Z"
+                                    stroke="#228542" stroke-width="2" />
+                                <path
+                                    d="M25.6406 23.9427H23.2422C22.935 23.9427 22.6403 23.8206 22.4231 23.6034L21.7189 24.3075L22.4231 23.6034C22.2058 23.3861 22.0837 23.0914 22.0837 22.7842V6.95518C22.0837 6.64792 22.2058 6.35325 22.4231 6.13599C22.6403 5.91873 22.935 5.79668 23.2422 5.79668H25.6406C25.9478 5.79668 26.2425 5.91873 26.4598 6.13599L27.1669 5.42889L26.4598 6.13599C26.677 6.35325 26.7991 6.64792 26.7991 6.95518V22.7842C26.7991 23.0914 26.677 23.3861 26.4598 23.6034C26.2425 23.8206 25.9478 23.9427 25.6406 23.9427Z"
+                                    stroke="#228542" stroke-width="2" />
+                            </svg>
+                            <span>Thống kê báo cáo</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<!--#endregion -->
+        <div class="wrap-content d-flex flex-column">
+            <!-- Nơi thả content vào -->
+            <!-- Không sửa class -->
+            <div class="content-row-space shadow-sm">
+                <!-- Hàng chức năng ở trên -->
+                <!-- Không sửa class "content-row-space" -->
+            </div>
+            <div class="content">
+                <!-- Trong này là nội dung theo từng chức năng -->
+                <!-- Không sửa class "content" -->
+                ok khong
+                <br>
+                HẢ
+            </div>
+            
+        <footer>Copyright 2023 GHK2P. All rights reserved.</footer>
+        </div>
+    </div>
+    
+    <script src="./layout.js"></script>
+</body>
+
+</html>

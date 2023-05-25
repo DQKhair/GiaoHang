@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Delivery.Models.NhanVien_TimKiem_Result>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@using (Html.BeginForm())
+{
+    <div class="container" style="background-color: #F2F2F2; padding: 50px;">
+        <div class="form-horizontal" style="background-color: white; padding: 30px; border-radius: 1rem">
+            <h4>Nhân viên</h4>
+            <hr />
+            <div class="row g-3">
+                <div class="col mb-3">
+                    @Html.DisplayName("Mã nhân viên")
+                    <div class="col mt-2">
+                        <input type="number" class="form-control" value="" name="MaNV" placeholder="" />
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    @Html.DisplayName("Họ tên")
+                    <div class="col mt-2">
+                        <input type="Text" class="form-control" value="" name="tenNV" placeholder="">
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    @Html.DisplayName("Khu vực hoạt động")
+                    <div class="col mt-2">
+                        <input type="Text" class="form-control" value="" name="khuvuc" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+                @Html.ActionLink("+ Thêm nhân viên", "Create", "NhanViens", new { @class = "btn btn-success", @style = "border-radius: 1.5rem" })
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    @Html.ActionLink("Reset", "Index", "NhanViens", new { @class = "btn btn-outline-success", @style = "border-radius: 1.5rem;  width: 100px;" })
+                    <input type="submit" value="Search" class="btn btn-success" style="border-radius: 1.5rem; width: 100px; " />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal" style="background-color: white; padding: 30px; border-radius: 1rem; margin-top: 20px;">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Mã nhân viên")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Họ Tên")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Ngày sinh")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Email")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Số điện thoại")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Khu vực hoạt động")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Actions")
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaNhanVien)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenNhanVien)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgaySinh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SoDienThoai)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenKhuVuc)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Xóa", "Delete", new { id = item.MaNhanVien }, new { @class = "btn btn-outline-success" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+}

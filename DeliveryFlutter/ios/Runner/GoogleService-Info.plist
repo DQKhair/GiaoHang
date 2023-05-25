@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>6243242982-kvo8asof2t672h3os3o349pe6bgn8oir.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.6243242982-kvo8asof2t672h3os3o349pe6bgn8oir</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBZwwtOkQrDD6KSK7CrjkeR5Gk75sK2g7E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>6243242982</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.delivery</string>
+	<key>PROJECT_ID</key>
+	<string>delivery-oni</string>
+	<key>STORAGE_BUCKET</key>
+	<string>delivery-oni.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:6243242982:ios:48b2ead5515381066f3c27</string>
+	<key>DATABASE_URL</key>
+	<string>https://delivery-oni-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>

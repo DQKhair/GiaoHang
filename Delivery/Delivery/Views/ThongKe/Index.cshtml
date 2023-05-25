@@ -1,0 +1,91 @@
+﻿@{
+
+    ViewBag.Title = "ThongKe";
+}
+
+<div class="row">
+    <div>
+        @Html.DropDownList("Year", null, "Select", new { @class = "form-select p-2", @id = "sly" })
+    </div>
+    <div>
+        @Html.DropDownList("Month", null, "Select", new { @class = "form-select p-2", @id = "slm" })
+    </div>
+</div>
+
+
+
+<div id="barChart" class="container w-75 mt-4" style="height: 450px;">
+    <canvas id="myChart"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+
+    //Lấy năm hiện tại để hiển thị chart - mặc định trang chart không bị trống lúc đầu khi load dữ liệu
+    var Year = new Date();
+    var Month = new Date();
+    GetCurrentYear(Year.getFullYear(), Month.getMonth());
+
+    //Xét sk onchange để lấy dữ liệu theo giá trị year
+    $('#sly').on('change', function () {
+        $('#slm').on('change', function () {
+            var year = $('#sly').val();
+            var month = $(this).val();
+            GetCurrentYear(year, month);
+            console.log(year);
+            console.log(month);
+
+        });
+    });
+
+    function GetCurrentYear(year, month) {
+        $.get('/ThongKe/GetChart?year=' + year, 'month=' + month, function (res) {
+            CreateChart(res);
+        });
+    }
+
+
+    function CreateChart(lstdata) {
+
+        //Xóa chart cũ tạo chart mới mỗi khi load lại
+        $("canvas#myChart").remove();
+        $('#barChart').html('<canvas id="myChart"></canvas>');
+
+
+        var label = [];
+        var dtsource = [];
+
+        $.each(lstdata, function (index, item) {
+            label.push(item.Ngay);
+            dtsource.push(item.SL);
+        });
+
+        console.log(label);
+
+        var chart = document.getElementById("myChart");
+
+        var barchart = {
+            labels: label,
+            datasets: [
+                {
+                    label: 'Số lượng đơn đã giao',
+                    backgroundColor: '#0b9663',
+                    borderWidth: 1,
+                    data: dtsource
+                }
+            ]
+        };
+
+        var myBarChart = new Chart(chart, {
+            type: 'bar',
+            data: barchart,
+        });
+    }
+
+</script>
+
+
+
+

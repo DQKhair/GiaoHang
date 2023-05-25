@@ -1,0 +1,25 @@
+- Github
+https://github.com/PhucDang02/Delivery
+
+- UI
+https://www.figma.com/file/qEnAy06hl6Lfr3grnJ25xP/Giao-h%C3%A0ng?node-id=0%3A1&t=gXeGQbhAlJtFZFXF-1
+
+- Google Driver
+https://drive.google.com/drive/folders/1eTckpjwyAK8_jxj6g725HGCtS_Zo0V_j
+
+*Font family: Roboto; style: bold italic
+*Color
+- Black
+#1C2434
+rgba(28, 36, 52, 1)
+
+- Green
+#2D9147
+rgba(34, 133, 66, 1)
+
+- Light Green
+#54BF5A
+rgba(84, 191, 90, 1)
+
+- Linear-gradient
+(90deg, #54BF5A 0%, #228542 100%)

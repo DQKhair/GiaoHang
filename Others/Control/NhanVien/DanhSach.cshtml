@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "DanhSach";
+}
+
+<div class="container" style="background-color: #F2F2F2; padding: 50px;">
+    <div class="form-horizontal" style="background-color: white; padding: 30px; border-radius: 1rem">
+        <h4>Nhân viên</h4>
+        <hr />
+        <div class="row g-3">
+            <div class="col mb-3">
+                @Html.DisplayName("Mã nhân viên")
+                <div class="col mt-2">
+                    <input type="text" class="form-control" value="@ViewBag.IdNV" name="categoryIDNV" />
+                </div>
+            </div>
+            <div class="col mb-3">
+                @Html.DisplayName("Mã chức vụ")
+                <div class="col mt-2">
+                    <input type="Text" class="form-control" value="@ViewBag.IdCV" name="categoryIDCV" placeholder="">
+                </div>
+            </div>
+            <div class="col mb-3">
+                @Html.DisplayName("Họ tên")
+                <div class="col mt-2">
+                    <input type="Text" class="form-control" value="@ViewBag.Keyword" name="searchString" placeholder="">
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="d-flex justify-content-between">
+            @Html.ActionLink("+ Thêm nhân viên", "Create", "NhanVien", new { @class = "btn btn-success", @style = "border-radius: 1.5rem" })
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                @Html.ActionLink("Reset", "Index", "NhanVien", new { @class = "btn btn-outline-success", @style = "border-radius: 1.5rem;  width: 100px;" })
+                <input type="submit" value="Search" class="btn btn-success" style="border-radius: 1.5rem; width: 100px; " />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-horizontal" style="background-color: white; padding: 30px; border-radius: 1rem; margin-top: 20px;">
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    @Html.ActionLink("Mã nhân viên", "Index", new { sortOrder = ViewBag.NameSortParm, searchString = ViewBag.Keyword, categoryIDNV = ViewBag.IdNV, categoryIDCV = ViewBag.IdCV }, new { @class = "text-dark text-decoration-none" })
+                </th>
+                <th>
+                    @Html.ActionLink("Họ Tên", "Index", new { sortOrder = ViewBag.NameSortParm, searchString = ViewBag.Keyword, categoryIDNV = ViewBag.IdNV, categoryIDCV = ViewBag.IdCV }, new { @class = "text-dark text-decoration-none" })
+                </th>
+                <th>
+                    @Html.DisplayName("Ngày sinh")
+                </th>
+                <th>
+                    @Html.DisplayName("Email")
+                </th>
+                <th>
+                    @Html.DisplayName("Số điện thoại")
+                </th>
+                <th>
+                    @Html.ActionLink("Mã chức vụ", "Index", new { sortOrder = ViewBag.NameSortParm, searchString = ViewBag.Keyword, categoryIDNV = ViewBag.IdNV, categoryIDCV = ViewBag.IdCV }, new { @class = "text-dark text-decoration-none" })
+                </th>
+                <th>
+                    @Html.DisplayName("Actions")
+                </th>
+            </tr>
+
+            @foreach (var item in ViewBag.DanhSachNhanVien)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaNhanVien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenNhanVien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgaySinh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoDienThoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaChucVu)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Xóa", "Delete", new { id = item.MaNhanVien }, new { @class = "btn btn-outline-success" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

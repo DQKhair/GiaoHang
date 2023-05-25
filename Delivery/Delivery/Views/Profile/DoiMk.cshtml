@@ -1,0 +1,112 @@
+﻿
+@{
+    var info = ViewBag.sua as Delivery.Models.Profile_Get_Result;
+    ViewBag.Title = "DoiMk";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+
+@using (Html.BeginForm("DoiMk", "Profile", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="row form-horizontal container  card-body border-0 shadow p-3 mt-3 mx-auto w-50">
+    <h4>Đổi Mật Khẩu</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.ValidationMessage("OldMatKhau", "", new { @class = "text-danger" })
+    <div class=" row " style="border-radius: 30px;">
+        <div class="col-6">
+
+            <div class="form-group">
+                @Html.DisplayName("Tên tài khoản")
+                <div class="col-md-12">
+                    <input id="" name="" type="text" class="form-control" value="@info.TenTaiKhoan" readonly />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.DisplayName("Mật khẩu mới")
+                <div class="col-md-12">
+                    <input id="MatKhau" name="MatKhau" type="password" class="form-control" value="" required />
+                </div>
+
+                @Html.ValidationMessage("MatKhau", "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-6" actions="">
+            <div class="form-group">
+                @Html.DisplayName("Mật khẩu")
+                <div class="col-md-12">
+                    <input id="OldMatKhau" name="OldMatKhau" type="password" class="form-control" required />
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.DisplayName("Nhập lại mật khẩu mới")
+                <div class="col-md-12">
+                    <input id="ReMatKhau" name="ReMatKhau" type="password" class="form-control" value="" />
+
+                </div>
+                <input type="checkbox" class="me-2" onclick="myFunction()">Show Password
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-12 text-end mt-3">
+                    <button type="submit" name="id" value="@ViewBag.sua.MaNhanVien" class="btn text-white " style="background: linear-gradient(90deg, #54BF5A 0.7%, #2D9147 71.82%); border-radius: 1.5rem; width: 100px; margin-top: 15px;">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+}
+
+@section scripts{
+    <Script>
+        function myFunction() {
+            var x = document.getElementById("MatKhau");
+            var y = document.getElementById("ReMatKhau");
+            var z = document.getElementById("OldMatKhau");
+            if (x.type == "password") {
+                x.type = "text";
+                y.type = "text";
+                z.type = "text";
+            }
+            else {
+                x.type = "password";
+                y.type = "password";
+                z.type = "password";
+            }
+        }
+
+        $(document).ready(function () {
+            $('form').submit(function (e) {
+                if (!Validate()) {
+                    e.preventDefault(); //prevent the form from submitting
+                }
+            });
+        });
+
+        function Validate() {
+            const MatKhau = document.getElementById("MatKhau");
+            const ReMatKhau = document.getElementById("ReMatKhau");
+            if (MatKhau.value === ReMatKhau.value) {
+
+                return true;
+            } else {
+                alert("Mật khẩu xác nhận không khớp với mật khẩu mới!");
+                return false;
+            }
+        }
+    </Script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
